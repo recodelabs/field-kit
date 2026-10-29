@@ -30,7 +30,7 @@ match-bot-gui = "match_bot.gui.app:launch_gui"
 include = ["match_bot*"]
 
 [tool.setuptools.package-data]
-match_bot = ["data/*.csv"]
+match_bot = ["data/*.csv", "gui/templates/*.html", "gui/static/*"]
 
 [tool.pytest.ini_options]
 markers = [

@@ -1,0 +1,12 @@
+input/
+output/
+projects/
+dev/
+tests/
+examples/
+gazetteer/
+.claude/
+**/__pycache__
+*.egg-info
+build/
+dist/
