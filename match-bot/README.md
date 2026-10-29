@@ -188,6 +188,17 @@ Match-Bot includes Claude Code skills for an interactive workflow. When running 
 - **"Update the lookup with suggestions 1 and 3"** — applies manual matches to the CSV
 - **"Generate the report"** — creates a Markdown summary
 
+## Running the web app on a server (Docker)
+
+The `Dockerfile` here runs the web app (`match-bot-gui`) under gunicorn:
+
+```bash
+docker build -t match-bot match-bot/
+docker run -p 5000:5000 -v match-bot-data:/data match-bot
+```
+
+Uploads and the gazetteer cache are kept in the `/data` volume. The app has no sign-in of its own, so put it behind one (for example oauth2-proxy) before making it public. Old sessions' uploads are not removed automatically. The chat box needs the Claude Code CLI, which the image does not include.
+
 ## Supported Input Formats
 
 - CSV
